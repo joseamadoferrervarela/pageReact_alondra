@@ -1,0 +1,29 @@
+.proyectos{
+    /* margin-left: 10px;
+    margin-right: 10px; */
+    flex-grow: 1;
+    
+  /* background-color: rgb(253, 253, 253,0.6);
+   */
+  /* margin-bottom: 40px; */
+
+
+  /* background-image: url(blackpink-pink-venom-jisoo-hd-wallpaper-uhdpaper.com-886@0@g.jpg);
+  
+  background-size: cover;
+  background-position-y: 500px;
+  background-attachment:fixed;
+  background-position: center; */
+}
+    
+  
+
+@media screen and (max-width:480px) {
+    
+   
+    .proyectos{
+      background-image: none;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+  }

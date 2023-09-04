@@ -1,0 +1,14 @@
+.lenidioma{
+  /* background-image: url(blackpink-pink-venom-rose-hd-wallpaper-uhdpaper.com-888@0@g.jpg);
+  background-size: cover;
+  background-position-y: 500px;
+  background-attachment:fixed;
+  background-position: center; */
+  
+}
+@media screen and (max-width:480px) {
+    .lenidioma{
+      
+        background-image: none;
+    }
+}

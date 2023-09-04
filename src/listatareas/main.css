@@ -1,0 +1,28 @@
+.buy{
+    margin-right: 10px;
+}
+.header{
+    
+    box-sizing: border-box;
+    
+    margin-bottom: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   
+}
+
+.header h1{
+    margin: 0px;
+    margin-bottom: 5px;
+}
+
+.cajaflexible{
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 10px;
+    
+   
+}

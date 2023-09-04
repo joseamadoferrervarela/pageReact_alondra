@@ -1,0 +1,9 @@
+.calendario{
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: rgb(10, 250, 238);
+    width: 200px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    
+}

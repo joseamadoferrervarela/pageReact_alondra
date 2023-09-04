@@ -1,0 +1,98 @@
+.contenedor {
+  margin-right: 10px;
+  width: 50vh;
+  height: 50vh;
+  display: inline-block;
+  background-color: transparent;
+  
+  
+}
+
+.cajita1 {
+  width: calc(25% - 6px);
+  height: calc(25% - 6px);
+  background-color: skyblue;
+  position: relative;
+  border-left: 3px solid rgb(0, 255, 255);
+  border-top: 3px solid rgb(0, 255, 255);
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  background-color: transparent;
+}
+
+.cajita2 {
+  width: calc(25% - 6px);
+  height: calc(25% - 6px);
+  background-color: skyblue;
+  position: relative;
+  left: 75%;
+  bottom: 25%;
+  border-top: 3px solid rgb(0, 255, 255);
+  border-right: 3px solid rgb(3, 255, 255);
+  border-left: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  background-color: transparent;
+}
+
+.cajita3 {
+  width: calc(25% - 6px);
+  height: calc(25% - 6px);
+  background-color: skyblue;
+  position: relative;
+  left: 75%;
+  top: 25%;
+  border-right: 3px solid rgb(0, 255, 255);
+  border-bottom: 3px solid rgb(0, 255, 255);
+  border-left: 3px solid transparent;
+  border-top: 3px solid transparent;
+  background-color: transparent;
+}
+
+.cajita4 {
+  width: calc(25% - 6px);
+  height: calc(25% - 6px);
+  background-color: skyblue;
+  position: relative;
+  border-left: 3px solid rgb(0, 255, 255);
+  border-bottom: 3px solid rgb(0, 255, 255);
+  border-right: 3px solid transparent;
+  border-top: 3px solid transparent;
+  background-color: transparent;
+}
+
+.cajita5 {
+  width: 90%;
+  height: 90%;
+  position: relative;
+  bottom: 97.5%;
+  left: 2.5%;
+  background-image: url(8176495cd18e8e8e6e590aef31c0a079.jpg);
+  background-size: cover;
+  border-radius: 100%;
+  border: 3px solid white;
+}
+
+@media screen and (max-height:480px) and (orientation: landscape){
+  .contenedor{
+    width: 70vh;
+    height: 70vh;
+    
+  }
+}
+
+@media screen and (max-width:480px)and  (orientation: portrait){
+  .contenedor{
+    width: 100%;
+    height: 100vw;
+    margin-right: 0px;
+   
+  }
+}
+
+@media screen and (min-width:480px) and (max-width:960px) and  (orientation: portrait){
+  .contenedor{
+    display: block;
+    margin: auto;
+  }
+}
+   

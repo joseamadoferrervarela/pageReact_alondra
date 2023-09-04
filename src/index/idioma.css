@@ -1,0 +1,81 @@
+.idioma {
+  width: 100%;
+  margin-bottom: 40px;
+  padding-bottom: 10px;
+  /* margin-left: 10px;
+  margin-right: 10px; */
+  flex-grow: 1;
+  color: rgb(0, 45, 247);
+
+  /* background-color: rgb(253, 253, 253,0.6); */
+
+}
+
+.idioma_name {
+  display: inline-block;
+  font-size: 24px;
+ 
+  
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: rgba(255, 255, 255, 0.856);
+  
+}
+
+.idioma_descripcion {
+  font-size: 18px;
+  color: rgb(0, 247, 247);
+
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.idioma_imagen {
+  width: 200px;
+  height: 120px;
+  margin-left: 10px;
+}
+
+
+  @media screen and (max-width:480px) {
+    
+    .idioma_imagen {
+      width: 100vw;
+      height: 50vw;
+      margin-left: 0px;
+  margin-right: 0px;
+  object-fit: cover;
+      
+    }
+
+    .idioma{
+    
+      margin-left: 0px;
+  margin-right: 0px;
+    }
+
+    .idioma_name{
+      font-size: 18px;
+      margin-left: 0px;
+  margin-right: 0px;
+    }
+
+    .idioma_descripcion{
+      font-size: 12px;
+      margin-left: 0px;
+  margin-right: 0px;
+  
+    }
+    
+  }
+
+  /* @media screen and (min-width:480px) and (max-width:769px) {
+    .idioma_name{
+          
+    }
+
+    .idioma_descripcion{
+
+    }
+} */

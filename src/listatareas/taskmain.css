@@ -1,0 +1,22 @@
+.cond{
+    margin-bottom: 10px;
+    display: flex;
+    height: 20px;
+}
+
+.fecha{
+    width: 65px;
+    padding-top: 4.4px ;
+    box-sizing:border-box;
+    background-color: white;
+    margin: 0px;
+    margin-right: 5px;
+    border-radius: 2px;
+    border: 1px solid gray;
+    text-align: center;
+    
+}
+
+.bot{
+    height: 100%;
+}

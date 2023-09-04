@@ -1,0 +1,15 @@
+.forms{
+    width: 100%;
+    bottom: 100%;
+    margin-bottom: 20px;
+}
+
+.inputs{
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.inputs:nth-child(1){
+  height: 20px;  
+  width: 70%;
+}

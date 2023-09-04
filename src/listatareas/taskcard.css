@@ -1,0 +1,25 @@
+
+
+.conten{
+    width: 100%;
+    margin-bottom: 5px;
+    position: relative;
+    z-index: 2;
+}
+
+.tarea{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #808080;
+    border-radius: 2px;
+}
+
+.texto{
+    box-sizing: border-box;
+    padding-left: 3px;
+    margin: 0px;
+}
+
+.holamundo{
+    background-color: rgb(93, 240, 183);
+}
