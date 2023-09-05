@@ -25,7 +25,7 @@ export function Nav() {
         </a>
 
 
-        <a target='_blank' href="https://github.com/spartanhalo16">
+        <a target='_blank' href="https://github.com/joseamadoferrervarela">
           <div className="links">
             <i className="fa-brands fa-github"></i>
           </div>

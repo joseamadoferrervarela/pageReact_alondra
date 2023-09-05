@@ -6,7 +6,8 @@ export function Main1() {
   const handleIncrement= async () => {
 
   
-    const solicitudinfocanal ='https://youtube.googleapis.com/youtube/v3/channels?part=snippet,brandingSettings&id=UCKnTtZpgQiIznMU3tl40DjQ&key=AIzaSyB02E8Ki_FkLbuv3TJ84OfEW_X6In2ZCPk'
+    // const solicitudinfocanal ='https://youtube.googleapis.com/youtube/v3/channels?part=snippet,brandingSettings&id=UCKnTtZpgQiIznMU3tl40DjQ&key=AIzaSyB02E8Ki_FkLbuv3TJ84OfEW_X6In2ZCPk'
+    const solicitudinfocanal ='https://youtube.googleapis.com/youtube/v3/channels?part=snippet,brandingSettings&id=UCOmHUn--16B90oW2L6FRR3A&key=AIzaSyB02E8Ki_FkLbuv3TJ84OfEW_X6In2ZCPk'
     const respuesta1 = await fetch(solicitudinfocanal)
     const respuesta1JSON = await respuesta1.json()
     const infocanal = respuesta1JSON.items
@@ -18,7 +19,7 @@ export function Main1() {
    
     
    
-    const solicitudinfoseccionescanal= 'https://youtube.googleapis.com/youtube/v3/channelSections?part=snippet,contentDetails&fields=items(snippet.title,contentDetails.playlists)&channelId=UCKnTtZpgQiIznMU3tl40DjQ&key=AIzaSyB02E8Ki_FkLbuv3TJ84OfEW_X6In2ZCPk'
+    const solicitudinfoseccionescanal= 'https://youtube.googleapis.com/youtube/v3/channelSections?part=snippet,contentDetails&fields=items(snippet.title,contentDetails.playlists)&channelId=UCOmHUn--16B90oW2L6FRR3A&key=AIzaSyB02E8Ki_FkLbuv3TJ84OfEW_X6In2ZCPk'
     const respuesta2 = await fetch(solicitudinfoseccionescanal);
     const respuesta2JSON = await respuesta2.json();
     const infosecciones= respuesta2JSON.items

@@ -11,7 +11,7 @@ export function Proyectos() {
         reiciendis maxime atque deleniti iure molestias similique ducimus.
         Tempore amet impedit vero at rem exercitationem. Blanditiis eveniet eius
         distinctio quo.'
-        linkgit="https://github.com/spartanhalo16/mypageweb"
+        linkgit="https://github.com/joseamadoferrervarela/youtubedataapiv3"
         linkhtml="../../api1.html"
         imagen="5ed26904ae2d435276d67dad0d6404ba.jpeg"
       ></Proyecto>
@@ -22,7 +22,7 @@ export function Proyectos() {
         reiciendis maxime atque deleniti iure molestias similique ducimus.
         Tempore amet impedit vero at rem exercitationem. Blanditiis eveniet eius
         distinctio quo.'
-        linkgit="https://github.com/spartanhalo16/mypageweb"
+        linkgit="https://github.com/joseamadoferrervarela/listtask"
         linkhtml="../../listatareas.html"
         imagen="5ed26904ae2d435276d67dad0d6404ba.jpeg"
       ></Proyecto>
