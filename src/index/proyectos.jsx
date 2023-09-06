@@ -12,7 +12,7 @@ export function Proyectos() {
         Tempore amet impedit vero at rem exercitationem. Blanditiis eveniet eius
         distinctio quo.'
         linkgit="https://github.com/joseamadoferrervarela/youtubedataapiv3"
-        linkhtml="../../api1.html"
+        linkhtml="/apiyoutubedatav3"
         imagen="5ed26904ae2d435276d67dad0d6404ba.jpeg"
       ></Proyecto>
 
@@ -23,7 +23,7 @@ export function Proyectos() {
         Tempore amet impedit vero at rem exercitationem. Blanditiis eveniet eius
         distinctio quo.'
         linkgit="https://github.com/joseamadoferrervarela/listtask"
-        linkhtml="../../listatareas.html"
+        linkhtml="/listadetareas"
         imagen="5ed26904ae2d435276d67dad0d6404ba.jpeg"
       ></Proyecto>
 

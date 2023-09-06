@@ -1,8 +1,8 @@
-import "./main.css";
+import "./app2.css";
 import { Calendartask } from "./calendartask.jsx";
 import { useState } from "react";
 
-export function Main() {
+export function App2() {
 
     const [fecha, setFecha] = useState([])
     const [tarjetas, setTarjetas] = useState([{mensaje :"2023-08-01", id: 0}])

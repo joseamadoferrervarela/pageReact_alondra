@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import "./main1.css";
+import "./app1.css";
 
-export function Main1() {
+export function App1() {
 
   const handleIncrement= async () => {
 
   
-    // const solicitudinfocanal ='https://youtube.googleapis.com/youtube/v3/channels?part=snippet,brandingSettings&id=UCKnTtZpgQiIznMU3tl40DjQ&key=AIzaSyB02E8Ki_FkLbuv3TJ84OfEW_X6In2ZCPk'
     const solicitudinfocanal ='https://youtube.googleapis.com/youtube/v3/channels?part=snippet,brandingSettings&id=UCOmHUn--16B90oW2L6FRR3A&key=AIzaSyB02E8Ki_FkLbuv3TJ84OfEW_X6In2ZCPk'
     const respuesta1 = await fetch(solicitudinfocanal)
     const respuesta1JSON = await respuesta1.json()
@@ -66,7 +65,7 @@ export function Main1() {
 
   return (
     <>
-    {/* <button onClick={handleIncrement}>hola</button> */}
+    
     <div id="howl"></div>
  
     </>

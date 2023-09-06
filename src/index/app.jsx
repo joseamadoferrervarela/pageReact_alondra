@@ -1,4 +1,4 @@
-import "./main.css";
+import "./app.css";
 import { Bienvenida } from "./bienvenida";
 
 import { Lenidioma } from "./lenidioma.jsx";
@@ -7,7 +7,7 @@ import { Nav } from "./nav.jsx";
 import { Sobremi } from "./sobremi.jsx";
 
 
-export function Main() {
+export function App() {
   return (
    
     <div className="main">

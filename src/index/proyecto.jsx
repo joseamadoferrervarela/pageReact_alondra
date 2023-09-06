@@ -1,5 +1,5 @@
 import "./proyecto.css";
-
+import { Link } from "react-router-dom";
 export function Proyecto(props) {
   return (
     <div className='proyecto'>
@@ -9,12 +9,12 @@ export function Proyecto(props) {
       <p className="proyecto_descripcion"><b>{props.descripcion}</b></p>
 
       <img className="proyecto_imagen" src={props.imagen} />
-
+      
       <a target="_blank" className='proyecto_boton' href={props.linkhtml}>
         <i class="fa-solid fa-arrow-right"></i><b> ir a la aplicacion</b>
       </a>
 
-      <a target="_blank" className='proyecto_boton'href={props.linkgit}>
+      <a target="_blank" className='proyecto_boton' href={props.linkgit}>
         <i className="fa-brands fa-github"></i> <b>ir al codigo</b>
       </a>
 
