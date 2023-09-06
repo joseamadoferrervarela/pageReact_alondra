@@ -11,16 +11,16 @@ hola[0].setAttribute("style", "margin:0px");
 
 const router= createBrowserRouter([
   {
-    path:"/",
+    path:"/mypageweb",
     element:<App></App>,
     errorElement:<h1>hola te equivocaste</h1>
   },
   {
-    path:"/apiyoutubedatav3",
+    path:"/mypageweb/apiyoutubedatav3",
     element:<App1></App1>
   },
   {
-    path:"/listadetareas",
+    path:"/mypageweb/listadetareas",
     element:<App2></App2>
   }
 ])
