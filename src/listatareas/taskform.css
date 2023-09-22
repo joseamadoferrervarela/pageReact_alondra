@@ -7,9 +7,12 @@
 .inputs{
     box-sizing: border-box;
     width: 100%;
+    border-radius: 10px;
+    
 }
 
 .inputs:nth-child(1){
-  height: 20px;  
+    
   width: 70%;
+  
 }

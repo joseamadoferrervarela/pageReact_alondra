@@ -24,9 +24,10 @@ export function Calendartask(props) {
   const deleteTask = (taskId) => {
     setTasks(tasks.filter(task => task.id !== taskId))
   }
-
+ 
   return (
-    <div className="calendario">
+    // <div style={{backgroundColor:`${props.newfecha.colorful}`}} className="calendario">
+        <div style={{backgroundImage:`url(${props.newfecha.colorful})`}} className="calendario">
       
       <Taskmain deleteTarjeta={props.deleteTarjeta} newfecha={props.newfecha}></Taskmain>
       <Taskform createTask={createTask}></Taskform>

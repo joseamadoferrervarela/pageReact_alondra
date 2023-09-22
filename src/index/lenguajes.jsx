@@ -3,12 +3,12 @@ import "./lenguajes.css";
 export function Lenguajes() {
   return (
     <div className="lenguajes">
-      <h1 className="lenguajes_name">lenguajes que domino</h1>
+      <h1 className="lenguajes_name">tegnologias con las que trabajo</h1>
       <p className="lenguajes_descripcion"><b>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. At, expedita provident. Veritatis deserunt molestias ut harum earum eaque, nesciunt ducimus soluta, nostrum quisquam ipsum aspernatur, dolores debitis! Hic, soluta quas.</b>
+        Trabajo con las sigientes tegnologias HTML, CSS, Java Script, React, Boopstrap, Sass, TailWindCss, Git, GitHub, SQL, MySQL, JQuery,TypeScript y diseño responsivo.</b>
       </p>
       <div className="lenguajes_scroll">
-      
+    
       
         <img className="lenguajes_imagen" src="js-es-lp-hero.png"></img>
 
@@ -27,6 +27,18 @@ export function Lenguajes() {
         <img className="lenguajes_imagen"
         src="ilustracion-vector-logotipo-plano-bootstrap_582637-461.jpg"
         ></img>
+
+
+
+<img className="lenguajes_imagen" src="sql-1024x572.jpg"></img>
+
+<img className="lenguajes_imagen" src="word-image-1.png"></img>
+
+<img className="lenguajes_imagen" src="MySQL-Logo.png"></img>
+
+<img className="lenguajes_imagen" src="3553.1554799162.png"></img>
+
+
 
       </div>
     </div>

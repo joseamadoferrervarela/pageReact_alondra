@@ -1,32 +1,38 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider} from "react-router-dom";
+import { createHashRouter, RouterProvider} from "react-router-dom";
 import {App} from "./index/app.jsx";
 import { App1 } from "./apiyoutubedatav3/app1.jsx";
 import { App2 } from "./listatareas/app2.jsx";
+import { App4 } from "./mycrud/App4.jsx";
 
 const hola = document.getElementsByTagName("body");
 hola[0].setAttribute("style", "margin:0px");
 
 
-const router= createBrowserRouter([
+const router= createHashRouter([
   {
-    path:"/mypageweb",
+    path:"/",
     element:<App></App>,
     errorElement:<h1>hola te equivocaste</h1>
   },
   {
-    path:"/mypageweb/apiyoutubedatav3",
+    path:"/apiyoutubedatav3",
     element:<App1></App1>
   },
   {
-    path:"/mypageweb/listadetareas",
+    path:"/listadetareas",
     element:<App2></App2>
-  }
-])
+  },
+  {
+    path:"/mycrud",
+    element:<App4></App4>
+  },
+]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   
     <RouterProvider router={router}/>
+    
   
 );

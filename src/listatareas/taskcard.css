@@ -11,7 +11,7 @@
     width: 100%;
     background-color: rgb(255, 255, 255);
     border: 1px solid #808080;
-    border-radius: 2px;
+    border-radius: 10px;
 }
 
 .texto{
@@ -20,6 +20,15 @@
     margin: 0px;
 }
 
-.holamundo{
-    background-color: rgb(93, 240, 183);
+.texto:nth-child(2){
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+
+.holamundofg{
+    background-color: rgb(169, 252, 204);
+  
+  
 }

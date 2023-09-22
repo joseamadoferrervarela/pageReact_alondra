@@ -1,9 +1,14 @@
 .calendario{
     box-sizing: border-box;
     padding: 10px;
-    background-color: rgb(10, 250, 238);
-    width: 200px;
+    background-image: url(953b11cb8520435fc50a1d96dde9c250.jpg);
+    /* width: 200px; */
+
+    background-size:cover;
+    background-position: center;
+    width: 270px;
+    height: 75vh;
     margin-right: 10px;
     margin-bottom: 10px;
-    
+    border-radius: 20px;
 }

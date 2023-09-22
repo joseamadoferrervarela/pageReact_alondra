@@ -17,9 +17,9 @@ export function Taskform(props) {
    
    return(
     <form  className="forms" onSubmit={handleSubmit}>
-    <input type='time' className="inputs" autoFocus value={title} placeholder="escribe la hora" onChange={e=>setTitle(e.target.value)} />
-    <input className="inputs" value={description} type="textarea" placeholder="escribe tu tarea" onChange={e=>setDescription(e.target.value)} />
-    <button>guardar tarea</button>
+    <input type='time' className="form-control inputs" autoFocus value={title} placeholder="escribe la hora" onChange={e=>setTitle(e.target.value)} />
+    <input className="form-control inputs" value={description} type="textarea" placeholder="escribe tu tarea" onChange={e=>setDescription(e.target.value)} />
+    <button className=" form-control inputs">guardar tarea</button>
     </form>
   )
 }

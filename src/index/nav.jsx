@@ -5,27 +5,29 @@ export function Nav() {
     <>
       <div className="linksarea">
 
-        <a target='_blank'  href="https://t.me/joseamadoferrervarela">
+        <a style={{textDecoration:"none"}}target='_blank'  href="https://t.me/joseamadoferrervarela">
           <div className="links">
             <i className="fa-brands fa-telegram"></i>
           </div>
         </a>
 
-        <a target='_blank'href="https://wa.me/525523879510">
+        <a style={{textDecoration:"none"}}
+ 
+        target='_blank'href="https://www.facebook.com/amado.ferrer.583/">
           <div className="links">
+          <i  class="fa-brands fa-facebook"></i>
           
-          <i style={{fontSize:'17px'}} class="fa-brands fa-square-whatsapp"></i>
           </div>
         </a>
 
-        <a target='_blank' href="https://www.linkedin.com/in/amado-ferrer-33797a28a/">
+        <a style={{textDecoration:"none"}} target='_blank' href="https://www.linkedin.com/in/amado-ferrer-33797a28a/">
           <div className="links">
           <i class="fa-brands fa-linkedin"></i>
           </div>
         </a>
 
 
-        <a target='_blank' href="https://github.com/joseamadoferrervarela">
+        <a style={{textDecoration:"none"}} target='_blank' href="https://github.com/joseamadoferrervarela">
           <div className="links">
             <i className="fa-brands fa-github"></i>
           </div>

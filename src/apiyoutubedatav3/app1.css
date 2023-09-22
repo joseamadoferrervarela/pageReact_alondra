@@ -18,7 +18,7 @@ margin: 0px;
     width: 100%;
     
     background-color: blue;
-
+    border-radius: 10px;
 }
 .myphoto{
 width: 20%;
@@ -35,6 +35,19 @@ margin-top: 30px;
     font-size: 17px;
 }
 
+.myphoto{
+    width: 300px;
+
+}
+.entrada{
+margin-right: 5px;
+margin-top: 20px;
+}
+
+
+.head{
+    margin: 30px;
+}
 
 .info{
     vertical-align:top;
@@ -44,37 +57,45 @@ margin-top: 30px;
     margin-top: 50px;
 }
 
+
 .nameseccion{
+    /* margin-top: 100px; */
 width: 100%;
 /* height: 30px; */
 object-fit:cover;
 /* background: linear-gradient(330deg, rgb(252, 252, 252) 60%, rgb(8, 86, 255) ); */
 color: #ffffff;
 background-color: blue;
+font-size: 23px;
+height:45px;
+border-radius: 10px;
+padding-left: 10px;
 }
 
 iframe{
-    width: 500px;
-    height: 280px;
+    width: 400px;
+    height: 200px;
     display: inline-block;
-    
+    /* border-radius: 15px; */
+    border-radius: 10px;
 }
 .namelist{
     
-    font-size: 15px;
+    font-size: 17px;
 }
 
 .descriptionlist{
-    font-size: 10px;
+    font-size: 15px;
     
 }
 .maincaja{
     margin: 30px;
     margin-top: 10px;
-    
+   
 }
 .cajaseccion{
     margin: 30px;
+    
     
     /* background: linear-gradient(140deg, rgb(252, 252, 252) 60%, rgb(8, 86, 255) ); */
     
@@ -83,6 +104,7 @@ iframe{
 .videos{
     margin-right: 10px;
     display: inline-block;
-   
+    border-radius: 30px;
+    width: 100%;
 
 }

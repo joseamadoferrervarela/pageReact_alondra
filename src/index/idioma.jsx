@@ -5,7 +5,7 @@ export function Idioma() {
     <div className="idioma">
       <h1 className="idioma_name">idiomas que domino</h1>
       <p className="idioma_descripcion"><b>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, sed animi beatae nulla eum molestiae. Debitis consequatur nihil asperiores hic sapiente impedit mollitia molestias ducimus repellat harum odit, porro consequuntur!</b>
+        He aprendido ingles de manera autodidacta alcanzando las caracteristicas del nivel B1</b>
       </p>
 
       <img

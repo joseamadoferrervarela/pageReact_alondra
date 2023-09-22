@@ -9,25 +9,31 @@
 .formulario_correo {
   display: block;
   font-family: monospace;
-  width: 705px;
+  width: 60%;
   margin-left: 10px;
   outline: none;
-  border: 2px solid blue;
-  margin-top: 2px;
+  border: 3px solid blue;
   
+  margin-top: 2px;
+  margin-top: 5px;
+  border-radius: 5px;
 }
 
 
-
 .formulario_mensaje {
-  border: 2px solid rgb(0, 247, 247);
+  
+  border: 3px solid rgb(7, 255, 255);
   display: block;
   font-family: monospace;
   height: 70px;
-  width: 705px;
-  margin-top: 2px;
+  /* width: 705px; */
+  width: 50% ;
+  margin-top: 5px;
+  margin-bottom: 5px;
   margin-left: 10px;
   outline: none;
+  border-radius: 5px;
+  
 }
 
 .formulario_boton {

@@ -1,60 +1,50 @@
-.sobremi{
-  height:calc(100vh - 30px) ;
-  
+.sobremi {
+  height: calc(100vh - 30px);
   box-sizing: border-box;
-  /* margin-left: 10px;
-  margin-right: 10px; */
   flex-grow: 1;
-  font-size:18px;
+  font-size: 18px;
   color: rgb(0, 252, 252);
-  /* background-color: rgb(255, 255, 255,0.6); */
-  
-  /* background-image: url(blackpink-pink-venom-rose-hd-wallpaper-uhdpaper.com-888@0@g.jpg);
-  
-  background-size: cover;
-  background-position-y: 500px;
-  background-attachment:fixed;
-  background-position: center; */
 }
 
-.sobremi_titulo{
-  font-size:24px;
-  display:inline-block;
+.sobremi_titulo {
+  font-size: 24px;
+  display: inline-block;
   color: rgb(0, 67, 252);
   margin-left: 10px;
   margin-right: 10px;
- 
   background-color: rgba(255, 255, 255, 0.856);
 }
 
-.sobremi_descripcion{
-  
+.sobremi_descripcion {
   margin-left: 10px;
   margin-right: 10px;
   background-color: rgba(65, 255, 223, 0.548);
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-
-@media screen and (max-width:480px) {
-  .sobremi{
-      margin: 0px;
-      margin-left: 0px;
+@media screen and (max-width: 480px) {
+  .sobremi {
+    margin: 0px;
+    margin-left: 0px;
     margin-right: 0px;
     background-image: none;
   }
 
-
-  .sobremi_titulo{
+  .sobremi_titulo {
     font-size: 18px;
     margin-left: 0px;
     margin-right: 0px;
   }
 
-  .sobremi_descripcion{
+  .sobremi_descripcion {
     font-size: 12px;
     margin-left: 0px;
     margin-right: 0px;
   }
 }
 
+@media screen and (max-height: 480px) and (orientation: landscape) {
+  .sobremi {
+    height: calc(150vh - 30px);
+}
+}
