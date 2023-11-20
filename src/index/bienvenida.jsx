@@ -7,9 +7,9 @@ export function Bienvenida() {
       <div className="bienvenida_item">
         <Foto></Foto>
         <div className="bienvenida_info">
-          <h1 className="bienvenida_nombre">
-            Hola soy Jose desarrollador web front end
-            </h1>          
+          <p className="bienvenida_nombre">
+            Hola soy Jose, desarrollador web full stack
+            </p>          
         </div>
       </div>
     </div>

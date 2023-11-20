@@ -1,0 +1,19 @@
+.contenedor6{
+padding: 20px;
+}
+@media screen and (max-width:800px){
+.contenedor6{
+height: auto;
+padding: 20px;
+}
+
+.tabla6{
+    transform: rotate(-90deg);
+    
+   
+}
+
+.celda6{
+    transform: rotate(90deg);
+}
+}

@@ -6,7 +6,7 @@ import { Taskcard } from "./taskcard.jsx";
 
 
   if(props.tasks.length === 0){
-  return <h1>no hay tareas aun</h1>
+  return <h1 style={{color:'white'}}className="nohaytareas">no hay tareas aun</h1>
   }
 
   return (

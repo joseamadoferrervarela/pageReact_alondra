@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./taskform.css";
 
 export function Taskform(props) { 
-   const [title, setTitle] = useState("")
+   const [title, setTitle] = useState("09:16")
    const [description, setDescription] = useState("")
 
 
@@ -11,13 +11,13 @@ export function Taskform(props) {
     const newTask=title
     const newDescription=description
     props.createTask(newTask,newDescription)
-    setTitle("")
+    setTitle("09:16")
     setDescription("")
    }
    
    return(
     <form  className="forms" onSubmit={handleSubmit}>
-    <input type='time' className="form-control inputs" autoFocus value={title} placeholder="escribe la hora" onChange={e=>setTitle(e.target.value)} />
+    <input type='time' className="form-control inputs"  value={title} placeholder="escribe la hora" onChange={e=>setTitle(e.target.value)} />
     <input className="form-control inputs" value={description} type="textarea" placeholder="escribe tu tarea" onChange={e=>setDescription(e.target.value)} />
     <button className=" form-control inputs">guardar tarea</button>
     </form>

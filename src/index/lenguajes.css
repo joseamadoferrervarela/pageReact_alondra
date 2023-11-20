@@ -3,6 +3,9 @@
   color: rgb(0, 247, 247);
 }
 
+.flecha{
+  display: none;
+}
 .lenguajes_name {
   font-size: 24px;
   display: inline-block;
@@ -26,7 +29,7 @@
 }
 
 .lenguajes_imagen {
-  height: 150px;
+  height: 135px;
   display: inline-block;
   margin-right: 5px;
   margin-bottom: 5px;
@@ -34,22 +37,52 @@
 
 @media screen and (max-width: 480px) {
   .lenguajes_imagen {
-    width: calc(100vw / 3);
-    height: calc(100vw / 3);
+    /* width: calc(100vw / 3);
+    height: calc(100vw / 3); */
+    width: 50%;
+    height: 50%;
+    
     /* margin-left: 0px;
     margin-right: 0px; */
     margin: 0px;
     
+    
   }
-
+  .flecha{
+    display: inline-block;
+    width: 20%;
+   margin-bottom: 10px;
+    animation-duration: 1s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  }
+  @keyframes slidein {
+    from {
+      margin-left: 0px;
+      
+    }
+  
+    to {
+      margin-left: 30px;
+      
+    }
+  }
   .lenguajes_scroll {
     margin-left: 0px;
     margin-right: 0px;
+    display: flex;
+    width: 100%;
+    flex-wrap:nowrap;
+    overflow-x:scroll;
+    
+    
   }
 
   .lenguajes {
-    margin-left: 0px;
-    margin-right: 0px;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    width: 90vw;
   }
 
   .lenguajes_name {

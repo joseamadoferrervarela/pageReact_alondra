@@ -24,9 +24,10 @@
 
 @media screen and (max-width: 480px) {
   .sobremi {
+    width: 100vw;
     margin: 0px;
-    margin-left: 0px;
-    margin-right: 0px;
+    margin-left: 5vw;
+    margin-right: 5vw;
     background-image: none;
   }
 
@@ -45,6 +46,7 @@
 
 @media screen and (max-height: 480px) and (orientation: landscape) {
   .sobremi {
-    height: calc(150vh - 30px);
+    height: calc(160vh - 30px);
+    
 }
 }

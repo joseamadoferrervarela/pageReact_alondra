@@ -33,7 +33,7 @@ export function Formulario() {
         <b>enviame un mensaje</b>
       </button>
 
-      <input type="hidden" name="_next" value="http://localhost:5173/" />
+      <input type="hidden" name="_next" value="https://joseamadoferrervarela.github.io/mypageweb/" />
       <input type="hidden" name="_captcha" value="false" />
     </form>
   );

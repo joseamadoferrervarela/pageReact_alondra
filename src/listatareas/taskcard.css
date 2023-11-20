@@ -3,27 +3,35 @@
 .conten{
     width: 100%;
     margin-bottom: 5px;
-    position: relative;
+    /* position: relative; */
     z-index: 2;
+    height: auto;
 }
 
 .tarea{
-    width: 100%;
+    
     background-color: rgb(255, 255, 255);
-    border: 1px solid #808080;
+    padding: 0px;
     border-radius: 10px;
+    height: auto;
+    word-break: break-word;
+    margin-bottom: 5px;
 }
 
 .texto{
+    
     box-sizing: border-box;
     padding-left: 3px;
     margin: 0px;
+    height: auto;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
-.texto:nth-child(2){
+/* .texto:nth-child(2){
     width: 100%;
     border-radius: 10px;
-}
+} */
 
 
 

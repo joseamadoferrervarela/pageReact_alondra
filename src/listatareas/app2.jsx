@@ -38,13 +38,14 @@ export function App2() {
         <div className="app2_header"> 
         {/* <h1 >list</h1> */}
         <form onSubmit={handleSubmit}>
+            <p className="app2_description" > fecha:</p>
             <input className="form-control app2_input" type="date"  onChange={e=>setFecha(e.target.value)}/>
             {/* <input className="app2_input" type="color" onChange={e=>setColor(e.target.value)} /> */}
-            
+            <p className="app2_description" > imagen de fondo:</p>
             <input className="app2_inputs form-control"
              type="file" onChange={colores} />
             
-            <button className="form-control app2_boton">introducir tarjeta</button>
+            <button className="form-control app2_boton">introducir nueva tarjeta</button>
         </form>
         </div>
 

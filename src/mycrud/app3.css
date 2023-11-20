@@ -1,0 +1,60 @@
+.holamundo{
+    width: 90%;
+    
+}
+td{
+    width: 20%
+}
+
+.hola{
+    background-color: rgb(0, 38, 255);
+    color: white;
+    height: 50px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.bodt{
+    margin: 10px;
+} 
+
+
+.imaima{
+    width: 100%;
+
+}
+.tabletanddesktop{
+    display: none;
+}
+
+
+.holamundofg{
+    background-color:rgb(0, 255, 213) ;
+}
+
+@media screen and (max-width: 480px) {
+    .tabletanddesktop{
+        display: inline-block;
+    }
+    .movile{
+        display: none;
+    }
+    td{
+        display: block;
+        width: 100%;
+    }
+
+    .botorprueba:nth-child(1){
+        width: 100%;
+    }
+  }
+
+  @media screen and (min-width: 480px) and (max-width:980px) {
+    .holamundo{
+        width: 130px;
+       
+    }
+    .botu{
+        margin-bottom: 5px;
+    }
+  }

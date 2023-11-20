@@ -1,67 +1,70 @@
+
 import "bootstrap/dist/css/bootstrap.min.css";
-import {
-  Table,
-  Button,
-  Container,
-  Modal,
-  ModalBody,
-  ModalHeader,
-  FormGroup,
-  ModalFooter,
-  CardHeader
-} from "reactstrap";
-import { useEffect, useState } from "react";
-import  "./app4.css";
+import {Table, Button, Modal, ModalBody,ModalHeader,FormGroup,ModalFooter} from "reactstrap";
+import {useEffect, useState} from "react";
+import "./app3.css";
+import {datos} from "./data.js";
+import { useFetcher } from "react-router-dom";
 
+export function App3() {
 
-export function App4() {
-  const datos = [
-    { id: 1, nombre: "rose", apellido: "Roseanne Park, más conocida por su nombre artístico Rosé, es una cantante, modelo y bailarina neozelandesa de origen surcoreano, miembro del grupo femenino Blackpink formado por la discográfica YG Entertainment en 2016.​ Su debut como solista fue el 12 de marzo de 2021, con el sencillo «On the Ground»", source:"8176495cd18e8e8e6e590aef31c0a079.jpg" },
-    { id: 2, nombre: "jisoo", apellido: "Kim Ji-soo, más conocida como Jisoo, es una cantante, actriz, modelo, bailarina y presentadora de televisión surcoreana, miembro del grupo Blackpink. Se unió a YG Entertainment en 2011 y se convirtió en aprendiz durante cinco años antes de debutar con Blackpink en agosto de 2016", source:"a07c1d67f18a0d9441f678282b6545ac.jpg" },
-    { id: 3, nombre: "lisa", apellido: "Lalisa Manobal​​, ​ más conocida por su nombre artístico Lisa, es una rapera, modelo, cantante y bailarina tailandesa. Es integrante del grupo femenino Blackpink, formado en 2016 por YG Entertainment.​Lisa hizo su debut en solitario con su álbum sencillo Lalisa en septiembre de 2021", source:"953b11cb8520435fc50a1d96dde9c250.jpg" },
-    
-    { id: 5, nombre: "jihyo", apellido: "Park Ji-hyo, más conocida como Jihyo, es una cantautora, modelo y bailarina surcoreana. En 2015, participó en el programa Sixteen, donde compitió para formar parte de Twice.​ Debutó como integrante y líder del grupo en el mismo año, bajo JYP Entertainment", source:"3a4e7663255112d8bf273432cd3645aa.jpg" },
-  ];
- 
   const [data, setData] = useState([]);
   const [mostrarmodal, setMostrarmodal] = useState(false);
   const [mostrarmodaleditar, setMostrarmodaleditar] = useState(false);
-  const [campos, setCampos] = useState({ id: "", nombre: "", apellido: "",source:"" });
-  const [registro, setRegistro] = useState({});
-  // const [imagenn, setImagenn] = useState([])
-
+  const [campos, setCampos] = useState({id: "", nombre: "", descripcion: "", source: ""});
+  
   useEffect(() => {
     setData(datos);
-  
   }, []);
+ 
 
-  // const imagen = (e) => {
-  //   console.log(e.target.value)
-    
-  // };
+
+  const llenarcampos = (e) => {
+    switch (e.target.name) {
+      case "nombre":
+        setCampos({ ...campos, nombre: e.target.value, id: data.length + 1 });
+        break;
+
+      case "descripcion":
+        setCampos({ ...campos, descripcion: e.target.value, id: data.length + 1 });
+        break;
+
+      case "imagen":
+        const reader = new FileReader();
+        reader.readAsDataURL(e.target.files[0]);
+        reader.addEventListener("load", (direct) => {
+          const mostrarimagen= document.getElementById('imss');
+          mostrarimagen.src=direct.currentTarget.result;
+          setCampos({
+            ...campos,
+            source: direct.currentTarget.result,
+            id: data.length + 1,
+          });
+        });
+        break;
+    }
+  };
   
-  const editarcampos0 = (e) => {
-  const reader= new FileReader()
-  reader.readAsDataURL(e.target.files[0])
-  reader.addEventListener("load",direct=>{
-    console.log(direct.currentTarget.result)
-    setCampos({ ...campos, source:direct.currentTarget.result});
-    // console.log(campos);
-  })
-    
-    
-  };
-
+  
   const editarcampos = (e) => {
-    setCampos({ ...campos, nombre: e.target.value, id: data.length + 1 });
-    console.log(campos);
-    
-  };
+    switch (e.target.name) {
+      case "nombre":
+        setCampos({ ...campos, nombre: e.target.value });
+        break;
 
-  const editarcampos1 = (e) => {
-    setCampos({ ...campos, apellido: e.target.value, id: data.length + 1 });
-    console.log(campos);
-    
+      case "descripcion":
+        setCampos({ ...campos, descripcion: e.target.value });
+        break;
+
+      case "imagen":
+        const reader = new FileReader();
+        reader.readAsDataURL(e.target.files[0]);
+        reader.addEventListener("load", (direct) => {
+          console.log(direct.currentTarget.result);
+          setCampos({ ...campos, source: direct.currentTarget.result });
+        });
+        break;
+    }
   };
 
   const modalabrir = () => {
@@ -72,11 +75,9 @@ export function App4() {
     setMostrarmodal(false);
   };
 
-  const modaleditarabrir = (datasss) => {
-    setRegistro(datasss);
-    setCampos(datasss)
+  const modaleditarabrir = (dattas) => {
+    setCampos(dattas);
     setMostrarmodaleditar(true);
-    
   };
 
   const modaleditarcerrar = () => {
@@ -84,28 +85,19 @@ export function App4() {
   };
 
   const insertar = () => {
-    
-    console.log(campos);
-
-//modificacion
-    
-
     setData([...data, campos]);
-    console.log(data);
     setMostrarmodal(false);
   };
 
-  
   const insertareditar = () => {
-    console.log(registro);
-
-    setCampos({ ...campos, id: registro.id });
-
     const newdato = data.map((dat) => {
-      if (dat.id === registro.id) {
-        console.log("hay una coincidencia");
-        console.log(campos);
-        return { ...dat, nombre: campos.nombre, apellido: campos.apellido, source:campos.source };
+      if (dat.id === campos.id) {
+        return {
+          ...dat,
+          nombre: campos.nombre,
+          apellido: campos.apellido,
+          source: campos.source,
+        };
       }
 
       return dat;
@@ -117,31 +109,25 @@ export function App4() {
   };
 
   const eliminar = (dattas) => {
-
     console.log(dattas);
-    const hola=data.filter((dat) => dat.id !== dattas.id)
+    const hola = data.filter((dat) => dat.id !== dattas.id);
     setData(hola);
     console.log(hola);
 
-   const nueva= hola.map((res,ind)=>{
-      return {...res,id:ind+1}
-    })
-   setData(nueva)
+    const nueva = hola.map((res, ind) => {
+      return { ...res, id: ind + 1 };
+    });
+    setData(nueva);
   };
 
-  
   return (
-    
     <div className="bodt">
-      {/* <div className="hola">Crud about girls Kpop</div> */}
-      <CardHeader></CardHeader>
-      <Container></Container>
-      <br></br>
+
       <Button color="primary" onClick={(e) => modalabrir()}>
         insertar nuevo
       </Button>
 
-      <Table>
+      <Table className="movile">
         <thead>
           <tr>
             <th>id</th>
@@ -156,11 +142,48 @@ export function App4() {
             return (
               <tr key={datas.id}>
                 <td>{datas.id}</td>
-                <td><img className="holamundo" src={datas.source}/></td>
-                <td>{datas.nombre}</td>
-                <td>{datas.apellido}</td>
-                
                 <td>
+                  <img className="holamundo" src={datas.source} />
+                </td>
+                <td>{datas.nombre}</td>
+                <td>{datas.descripcion}</td>
+
+                <td>
+                  <Button
+                    className="botu"
+                    onClick={(e) => modaleditarabrir(datas)}
+                    color="primary"
+                  >
+                    editar
+                  </Button>{" "}
+                  <Button
+                    className="botu"
+                    onClick={(e) => eliminar(datas)}
+                    color="danger"
+                  >
+                    eliminar
+                  </Button>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </Table>
+
+      <Table className="tabletanddesktop">
+        <tbody>
+          {data.map((datas) => {
+            return (
+              <tr key={datas.id}>
+                <td>id: {datas.id}</td>
+                <td>
+                  imagen: <img className="holamundo" src={datas.source} />
+                </td>
+                <td>nombre: {datas.nombre}</td>
+                <td>descripcion: {datas.descripcion}</td>
+
+                <td>
+                  <p className="botorprueba">funciones:</p>{" "}
                   <Button
                     onClick={(e) => modaleditarabrir(datas)}
                     color="primary"
@@ -180,17 +203,16 @@ export function App4() {
       <Modal isOpen={mostrarmodal}>
         <ModalHeader></ModalHeader>
         <ModalBody>
-        <FormGroup>
+          <FormGroup>
             <label>imagen:</label>
             <input
               type="file"
               className="form-control"
-              name="apellido"
-              onChange={editarcampos0}
-              
+              name="imagen"
+              onChange={llenarcampos}
             />
           </FormGroup>
-          {/* <img src={campos.source}  /> */}
+          <img id='imss' className="imaima" src=''/>
           <FormGroup>
             <label>id:</label>
             <input
@@ -206,7 +228,7 @@ export function App4() {
               type="text"
               className="form-control"
               name="nombre"
-              onChange={editarcampos}
+              onChange={llenarcampos}
             />
           </FormGroup>
           <FormGroup>
@@ -214,12 +236,12 @@ export function App4() {
             <input
               type="text"
               className="form-control"
-              name="apellido"
-              onChange={editarcampos1}
+              name="descripcion"
+              onChange={llenarcampos}
             />
           </FormGroup>
-          
         </ModalBody>
+
         <ModalFooter>
           <Button color="primary" onClick={(e) => insertar()}>
             insertar
@@ -233,17 +255,16 @@ export function App4() {
       <Modal isOpen={mostrarmodaleditar}>
         <ModalHeader></ModalHeader>
         <ModalBody>
-        <FormGroup>
+          <FormGroup>
             <label>imagen:</label>
             <input
               type="file"
               className="form-control"
-              name="apellido"
-              onChange={editarcampos0}
-              
+              name="imagen"
+              onChange={editarcampos}
             />
 
-          <img src={campos.source}  />
+            <img className="imaima" src={campos.source} />
           </FormGroup>
 
           <FormGroup>
@@ -252,9 +273,10 @@ export function App4() {
               type="text"
               className="form-control"
               readOnly
-              value={registro.id}
+              value={campos.id}
             />
           </FormGroup>
+
           <FormGroup>
             <label>nombre:</label>
             <input
@@ -265,17 +287,19 @@ export function App4() {
               value={campos.nombre}
             />
           </FormGroup>
+
           <FormGroup>
-            <label>descripciion:</label>
+            <label>descripcion:</label>
             <input
               type="text"
               className="form-control"
-              name="apellido"
-              onChange={(e) => editarcampos1(e)}
-              value={campos.apellido}
+              name="descripcion"
+              onChange={(e) => editarcampos(e)}
+              value={campos.descripcion}
             />
           </FormGroup>
         </ModalBody>
+
         <ModalFooter>
           <Button color="primary" onClick={(e) => insertareditar()}>
             insertar
@@ -285,8 +309,6 @@ export function App4() {
           </Button>
         </ModalFooter>
       </Modal>
-      </div>
+    </div>
   );
 }
-
-
