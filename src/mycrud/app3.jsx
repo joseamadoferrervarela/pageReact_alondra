@@ -4,7 +4,7 @@ import {Table, Button, Modal, ModalBody,ModalHeader,FormGroup,ModalFooter} from 
 import {useEffect, useState} from "react";
 import "./app3.css";
 import {datos} from "./data.js";
-import { useFetcher } from "react-router-dom";
+
 
 export function App3() {
 

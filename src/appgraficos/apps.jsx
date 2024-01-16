@@ -32,11 +32,11 @@ export function App() {
    <Modal2></Modal2>
 <Grid container spacing={2}>
 
-  <Grid item xs={12} sm={12} md={12} lg={9}>
+  <Grid item xs={12} sm={12} md={12} lg={12}>
     <Lista></Lista>
   </Grid>
 
-  <Grid item xs={12} sm={12} md={12} lg={3}>
+  <Grid  item xs={12} sm={12} md={12} lg={12}>
   <Grafica></Grafica>
   </Grid>
   

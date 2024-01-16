@@ -15,17 +15,19 @@ import { createSlice } from "@reduxjs/toolkit";
 
 
 const initialState=[
-        {id:1, nombre:'evento', fecha:'2023-11-09', hora:'01:10:12', ubicacion:'tepotzotlan', descripcion:'ir al colegio'},
-        {id:2, nombre:'evento', fecha:'2023-12-09', hora:'02:11:12', ubicacion:'tepotzotlan', descripcion:'ir al gymnasio'},
-        {id:3, nombre:'evento', fecha:'2023-06-09', hora:'03:10:12', ubicacion:'tepotzotlan', descripcion:'ir a la playa'},
-        {id:4, nombre:'evento', fecha:'2023-02-09', hora:'01:10:12', ubicacion:'tepotzotlan', descripcion:'ir al colegio'},
-        {id:5, nombre:'evento', fecha:'2023-01-09', hora:'02:11:12', ubicacion:'tepotzotlan', descripcion:'ir al gymnasio'},
-        {id:6, nombre:'evento', fecha:'2023-04-09', hora:'03:10:12', ubicacion:'tepotzotlan', descripcion:'ir al trabajo'},
-        {id:7, nombre:'evento', fecha:'2023-06-09', hora:'01:10:12', ubicacion:'tepotzotlan', descripcion:'buscar posters'},
-        {id:8, nombre:'evento', fecha:'2023-05-09', hora:'02:11:12', ubicacion:'tepotzotlan', descripcion:'ver a mi familia'},
-        {id:9, nombre:'evento', fecha:'2023-07-09', hora:'03:10:12', ubicacion:'tepotzotlan', descripcion:'ver amis amigos'},
-        {id:10, nombre:'evento', fecha:'2023-07-09', hora:'01:10:12', ubicacion:'tepotzotlan', descripcion:'ir al colegio'},
-        {id:11, nombre:'evento', fecha:'2023-07-09', hora:'02:11:12', ubicacion:'tepotzotlan', descripcion:'ver a la plaza'}
+        {id:1, nombre:'ir al colegio', fecha:'2023-11-09', hora:'01:10:12', ubicacion:'tepotzotlan', descripcion:'ir al colegio para presentar mi examen final'},
+        {id:2, nombre:'ir a una fiesta', fecha:'2023-12-09', hora:'02:11:12', ubicacion:'tepotzotlan', descripcion:'ir a una fiesta con mi novia'},
+        {id:3, nombre:'ir a la nadar', fecha:'2023-06-09', hora:'03:10:12', ubicacion:'tepotzotlan', descripcion:'ir a nadar con mis  nuevos amigos'},
+        {id:4, nombre:'ir al colegio', fecha:'2023-02-09', hora:'01:10:12', ubicacion:'tepotzotlan', descripcion:'ir al colegio a solicitar una constancia'},
+        {id:5, nombre:'ir al gimnasio', fecha:'2023-01-09', hora:'02:11:12', ubicacion:'tepotzotlan', descripcion:'ir al gimnasio, a pagar mi membresia'},
+        {id:6, nombre:'ir al trabajo', fecha:'2023-04-09', hora:'03:10:12', ubicacion:'tepotzotlan', descripcion:'ir al trabajo para una reunion'},
+        {id:7, nombre:'un celular', fecha:'2023-06-09', hora:'01:10:12', ubicacion:'tepotzotlan', descripcion:'buscar un celular de alta gama'},
+        {id:8, nombre:'ver a mi familia', fecha:'2023-12-09', hora:'02:11:12', ubicacion:'tepotzotlan', descripcion:'ver a mi familia para navidad'},
+        {id:9, nombre:'buscar un departamento', fecha:'2023-07-09', hora:'03:10:12', ubicacion:'tepotzotlan', descripcion:'conseguir un departamento para vivir aqui ahora'},
+        {id:10, nombre:'ir al concierto', fecha:'2023-07-09', hora:'02:11:12', ubicacion:'tepotzotlan', descripcion:'ir al concierto de blakpink'},
+        {id:11, nombre:'ir al colegio', fecha:'2023-07-09', hora:'02:11:12', ubicacion:'tepotzotlan', descripcion:'ir al colegio a presentar mi examen final'},
+        
+        
         
         
     ]
@@ -58,6 +60,7 @@ const dataSlice=createSlice({
                 return {
                   ...data,
                   nombre: action.payload.nombre,
+                  fecha:action.payload.fecha,
                   hora: action.payload.hora,
                   ubicacion: action.payload.ubicacion,
                   descripcion: action.payload.descripcion

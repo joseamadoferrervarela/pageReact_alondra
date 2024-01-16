@@ -11,14 +11,15 @@ import {onModal1,onModal2} from "../reducers/modal/modalSlice.jsx";
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 
-import Table from '@mui/material/Table';
+// import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import {  } from "./lista.css";
+import "./lista.css";
+import {Table} from "reactstrap";
 
 const style = {
   width: '70%',
@@ -62,62 +63,159 @@ export function Lista() {
     
 
     
-    <TableContainer className='contenedor6' component={Paper}>
-      <Button onClick={()=>dispatch(onModal1({
+  //   <TableContainer className='contenedor6' component={Paper}>
+  //     <Button onClick={()=>dispatch(onModal1({
+  //           modal1:true,
+  //           modal2:false,
+  //           }))} style={{borderColor: '#66ff99', backgroundColor:'transparent',color:'#66ff99'}}  sx={{mb:2}} variant="outlined" endIcon={<BookmarkAddIcon />}>
+  //   Agregar Evento
+  //   </Button>
+  //     <Table className='tabla6' sx={{ minWidth: 670 }} size="small" aria-label="a dense table">
+  //       <TableHead >
+  //         <TableRow>
+  //           <TableCell className='celda6' align="left">Nombre del evento</TableCell>
+  //           <TableCell className='celda6' align="left">Fecha del evento</TableCell>
+  //           <TableCell className='celda6' align="left">Hora del evento</TableCell>
+  //           <TableCell className='celda6' align="left">Lugar del evento</TableCell>
+  //           <TableCell className='celda6' align="left">Descripcion del evento</TableCell>
+  //           <TableCell  align="right">Acciones del evento</TableCell>
+  //         </TableRow>
+  //       </TableHead>
+  //       <TableBody>
+  //         {data.map((data) => (
+  //           <TableRow 
+            
+  //             key={data.id}
+  //             sx={{ 
+  //               '&:last-child td, &:last-child th': { border: 0 } }}
+  //           >
+              
+  //             <TableCell align="left">{data.nombre}</TableCell>
+  //             <TableCell align="left">{data.fecha}</TableCell>
+  //             <TableCell align="left">{data.hora}</TableCell>
+  //             <TableCell align="left">{data.ubicacion}</TableCell>
+  //             <TableCell align="left">{data.descripcion}</TableCell>
+  //             <TableCell align="left"> 
+              
+  //             <Stack direction="row" sx={{ mt: 1 }} spacing={2}>
+  //       <Button  onClick={()=>dispatch(deleteData(data.id))} style={{borderColor:'#cc99ff',backgroundColor:'transparent', color:'#cc99ff'}}  variant="outlined" endIcon={<DeleteOutlineIcon />}>
+  //       Eliminar
+  //       </Button>
+  //       <Button onClick={()=>{
+  //         dispatch(onModal2({
+  //           modal1:false,
+  //           modal2:true,
+  //           }));
+  //         dispatch(llenarCampos(data))}} style={{borderColor: '#66ff99', backgroundColor:'transparent',color:'#66ff99'}} variant="outlined" endIcon={<EditIcon />}>
+  //       Editar 
+  //       </Button>
+  //       </Stack>
+
+  //             </TableCell>
+  //           </TableRow>
+  //         ))}
+  //       </TableBody>
+  //     </Table>
+      
+  //   </TableContainer>
+
+  <div className='holNN'>
+
+    <Button onClick={()=>dispatch(onModal1({
             modal1:true,
             modal2:false,
-            }))} sx={{borderColor:'#ff00ff',color:'#ff00ff',mb:2}} variant="outlined" endIcon={<BookmarkAddIcon />}>
+            }))} style={{borderColor: '#6699ff', backgroundColor:'transparent',color:'#6699ff'}}  sx={{mb:2}} variant="outlined" endIcon={<BookmarkAddIcon />}>
     Agregar Evento
     </Button>
-      <Table className='tabla6' sx={{ minWidth: 670 }} size="small" aria-label="a dense table">
-        <TableHead >
-          <TableRow>
-            <TableCell className='celda6' align="left">nombre del evento</TableCell>
-            <TableCell className='celda6' align="right">Fecha del evento</TableCell>
-            <TableCell className='celda6' align="right">Hora del evento</TableCell>
-            <TableCell className='celda6' align="right">Lugar del evento</TableCell>
-            <TableCell className='celda6' align="right">Descripcion del evento</TableCell>
-            <TableCell  align="right">Acciones del evento</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {data.map((data) => (
-            <TableRow 
-            
-              key={data.id}
-              sx={{ 
-                '&:last-child td, &:last-child th': { border: 0 } }}
-            >
-              
-              <TableCell align="right">{data.nombre}</TableCell>
-              <TableCell align="right">{data.fecha}</TableCell>
-              <TableCell align="right">{data.hora}</TableCell>
-              <TableCell align="right">{data.ubicacion}</TableCell>
-              <TableCell align="right">{data.descripcion}</TableCell>
-              <TableCell align="right"> 
-              
-              <Stack direction="row" sx={{ mt: 1 }} spacing={2}>
-        <Button  onClick={()=>dispatch(deleteData(data.id))} sx={{borderColor:'#cc99ff',color:'#cc99ff'}} variant="outlined" endIcon={<DeleteOutlineIcon />}>
-        Eliminar
+    <div className='desktopN' >
+  <Table bordered  >
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>nombre del evento</th>
+      <th>fecha del evento</th>
+      <th>hora del evento</th>
+      <th>lugar del evento</th>
+      <th>descripcion del evento</th>
+      <th>funciones del evento</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    {data.map((datas) => {
+      return (
+        <tr key={datas.id}>
+          <td>{datas.id}</td>
+                <td> {datas.nombre}</td>
+                <td> {datas.fecha}</td>
+                <td>{datas.hora}</td>
+                <td> {datas.ubicacion}</td>
+                <td> {datas.descripcion}</td>
+                
+
+          <td>
+            <Stack direction="row" sx={{ mt: 1 }} spacing={2}>
+        <Button  onClick={()=>dispatch(deleteData(datas.id))} style={{borderColor:'#6699ff',backgroundColor:'transparent', color:'#6699ff'}}  variant="outlined" endIcon={<DeleteOutlineIcon />}>
+        Delete
         </Button>
-        <Button onClick={()=>{
-          dispatch(onModal2({
+       <Button onClick={()=>{
+        dispatch(onModal2({
             modal1:false,
             modal2:true,
             }));
-          dispatch(llenarCampos(data))}} sx={{borderColor:'#66ff99',color:'#66ff99'}} variant="outlined" endIcon={<EditIcon />}>
+          dispatch(llenarCampos(datas))}} style={{borderColor: '#66ffcc', backgroundColor:'transparent',color:'#66ffcc'}} variant="outlined" endIcon={<EditIcon />}>
+        Edit
+        </Button>
+        </Stack>
+          </td>
+        </tr>
+      );
+    })}
+  </tbody>
+</Table>
+</div>
+
+<div className="movileN">
+  <Table>
+        <tbody >
+          {data.map((datas) => {
+            return (
+              <tr  key={datas.id}>
+                <td style={{borderStyle:'none'}}>id: {datas.id}</td>
+                <td style={{borderStyle:'none'}}>nombre del evento: {datas.nombre}</td>
+                <td style={{borderStyle:'none'}}>fecha del evento: {datas.fecha}</td>
+                <td style={{borderStyle:'none'}}>hora del evento: {datas.hora}</td>
+                <td style={{borderStyle:'none'}}>ubicacion del evento: {datas.ubicacion}</td>
+                <td style={{borderStyle:'none'}}>descripcion del evento: {datas.descripcion}</td>
+                
+
+                <td>
+                  <p className="botorprueba">funciones:</p>{" "}
+                  <Stack direction="row" sx={{ mt: 1 }} spacing={2}>
+        <Button  onClick={()=>dispatch(deleteData(datas.id))} style={{borderColor:'#6699ff',backgroundColor:'transparent', color:'#6699ff'}}  variant="outlined" endIcon={<DeleteOutlineIcon />}>
+        Eliminar
+        </Button>
+       <Button onClick={()=>{
+        dispatch(onModal2({
+            modal1:false,
+            modal2:true,
+            }));
+          dispatch(llenarCampos(datas))}} style={{borderColor: '#66ffcc', backgroundColor:'transparent',color:'#66ffcc'}} variant="outlined" endIcon={<EditIcon />}>
         Editar 
         </Button>
         </Stack>
-
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
       </Table>
-      
-    </TableContainer>
+      </div>
+
+      </div>
   );
+
+
 
 }
 

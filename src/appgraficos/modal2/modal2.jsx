@@ -1,14 +1,6 @@
 import Button from '@mui/material/Button';
-import Modal from '@mui/material/Modal';
 import Grid from '@mui/material/Grid';
-import FormControl from '@mui/material/FormControl';
-import FormHelperText from '@mui/material/FormHelperText';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
-import BookmarkRemoveIcon from '@mui/icons-material/BookmarkRemove';
-import BookmarkAddIcon from '@mui/icons-material/BookmarkAdd';
 import BackspaceIcon from '@mui/icons-material/Backspace';
 import BeenhereIcon from '@mui/icons-material/Beenhere';
 
@@ -21,29 +13,13 @@ import {actualizarData} from "../reducers/data/dataSlice.jsx";
 
 import "./modal2.css";
 
-
-const style = {
-  
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
-  boxShadow: 24,
-  p: 4,
-  borderRadius: 2,
-};
+import {Modal,ModalBody} from "reactstrap";
 
 export function Modal2() {
 
   const modal = useSelector((state)=>state.modal)
   const campos = useSelector((state)=>state.edit)
   const dispatch= useDispatch()
-  
-
-  
-
   
 
   const initialValues= {
@@ -77,94 +53,112 @@ export function Modal2() {
   return (
     <div>
       
-      <Modal
-        
-        open={modal.modal2}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-        sx={{borderRadius: '10px'}}
-      >
-        <Box className='prueba12' sx={style} >
-        
-        <Typography id="modal-modal-title" variant="h6" component="h2">
-        Crea un nuevo evento
-        </Typography>
-        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-        Porfavor llena todos los campos para crear un evento
-        </Typography>
-        
+      <Modal isOpen={modal.modal2} >
+
+        <ModalBody>
+        <h5 style={{color:'#99ffcc'}}>Edita tu evento</h5>
+        <h6> Edita los campos que tu quieras</h6>
 
         <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
            {({values,handleChange,handleSubmit,errors})=>(
           <form id='myform' onSubmit={handleSubmit}>
         
-        <Grid container sx={{ mt: 1 }} >
-        <Grid  item md={12}>
-        <FormControl fullWidth>
-          <TextField  value={values.nombre} onChange={handleChange} fullWidth label="nombre" id='name' name='nombre' type='text' aria-describedby='name-helper' />
-          <FormHelperText id='name-helper' >nombre del evento</FormHelperText>
-          <p style={{height:'10px', color:'blue', fontSize:'12px',marginTop:'0px',marginBottom:'15px', fontFamily:'sans-serif'}}>{errors?.nombre}</p>
-        </FormControl>
+        <Grid container sx={{ mt: 4 }} >
+        <Grid  item xs={12}>
+        <div>
+          <label >nombre:</label>
+            <input type="text"
+              className="form-control"
+              name="nombre"
+              onChange={handleChange}
+              value={values.nombre}
+            />
+          <p className='advertencias'>{errors?.nombre}</p>
+        </div>
         </Grid>
         
-        <Grid item md={6}>
-        <FormControl fullWidth>
-          <TextField value={values.fecha} onChange={handleChange} fullWidth label="fecha" id='fecha' name='fecha' type='date' aria-describedby='fecha-helper' />
-          <FormHelperText id='fecha-helper' >fecha del evento</FormHelperText>
-          <p style={{height:'10px', color:'blue', fontSize:'12px',marginTop:'0px',marginBottom:'15px', fontFamily:'sans-serif'}}>{errors?.fecha}</p>
-        </FormControl>
+        <Grid style={{marginRight:'10px'}} item >
+        <div>
+          <label>fecha del evento:</label>
+            <input type="date"
+              className="form-control"
+              name="fecha"
+              onChange={handleChange}
+              value={values.fecha}
+            />
+          <p className='advertencias'>{errors?.fecha}</p>
+        </div>
         </Grid>
         
-        <Grid item md={6} >
-        <FormControl fullWidth>
-          <TextField value={values.hora}  onChange={handleChange} fullWidth  id='hora' name='hora' type='time' aria-describedby='hora-helper' />
-          <FormHelperText id='hora-helper' >hora del evento</FormHelperText>
-          <p style={{height:'10px', color:'blue', fontSize:'12px',marginTop:'0px',marginBottom:'15px', fontFamily:'sans-serif'}}>{errors?.hora}</p>
-        </FormControl>
+        <Grid item  >
+        <div>
+          <label>hora del evento:</label>
+          <input type="time"
+              className="form-control"
+              name="hora"
+              onChange={handleChange}
+              value={values.hora}
+            />
+          <p className='advertencias'>{errors?.hora}</p>
+        </div>
         </Grid>
 
-        <Grid item md={12} >
-        <FormControl fullWidth>
-          <TextField  value={values.ubicacion} onChange={handleChange} fullWidth label="ubicacion" id='ubicacion' name='ubicacion' type='text' aria-describedby='ubicacion-helper' />
-          <FormHelperText id='ubicacion-helper' >ubicacion del evento</FormHelperText>
-          <p style={{height:'10px', color:'blue', fontSize:'12px',marginTop:'0px',marginBottom:'15px', fontFamily:'sans-serif'}}>{errors?.ubicacion}</p>
-        </FormControl>
+        <Grid item xs={12} >
+        <div>
+          <label>ubicacion del evento:</label>
+          <input type="text"
+              className="form-control"
+              name="ubicacion"
+              onChange={handleChange}
+              value={values.ubicacion}
+            />
+          <p className='advertencias'>{errors?.ubicacion}</p>
+        </div>
         </Grid>
 
-        <Grid item md={12}>
-        <FormControl fullWidth>
-          <TextField  value={values.descripcion} onChange={handleChange} fullWidth label="descripcion" id='descripcion' name='descripcion' type='text' aria-describedby='hora-helper' />
-          <FormHelperText id='descripcion-helper' >descripcion del evento</FormHelperText>
-          <p style={{height:'10px', color:'blue', fontSize:'12px',marginTop:'0px',marginBottom:'15px', fontFamily:'sans-serif'}}>{errors?.descripcion}</p>
-        </FormControl>
+        <Grid item xs={12}>
+        <div>
+          <label>descripcion del evento:</label>
+          <input type="text"
+              className="form-control"
+              name="descripcion"
+              onChange={handleChange}
+              value={values.descripcion}
+            />
+          <p className='advertencias'>{errors?.descripcion}</p>
+        </div>
         </Grid>
         </Grid>
          
         <div style={{display:'flex', flexDirection:'row-reverse'}}>
         <Stack direction="row"  spacing={2}>
-           <Button type='submit'  sx={{borderColor:'#ff00ff',color:'#ff00ff'}} variant="outlined" endIcon={<BeenhereIcon />}>
-           Insertar 
-           </Button>
-        
            <Button onClick={()=>
-                      dispatch(onModal2({
-                       modal1:false,
-                       modal2:false,
-                    }))
-        
-           }  sx={{borderColor:'#ff00ff',color:'#ff00ff'}} variant="outlined" endIcon={<BackspaceIcon />}>
-           Cerrar
+                         dispatch(onModal2({
+                          modal1:false,
+                          modal2:false,
+                       }))}
+           style={{borderColor:'#6699ff',backgroundColor:'transparent', color:'#6699ff'}}  
+           variant="outlined"  
+           endIcon={<BackspaceIcon />}>
+           Close
+           </Button>
+     
+           
+           <Button disableRipple='true' 
+           type='submit' 
+           style={{borderColor: '#66ffcc', backgroundColor:'transparent',color:'#66ffcc'}} 
+           variant="outlined"   
+           endIcon={<BeenhereIcon />}>
+           Save 
            </Button>
         </Stack>
         </div>
 
-        
         </form>
         )}
         </Formik>
         
-      </Box>
-           
+        </ModalBody>
       </Modal>
        
     </div>

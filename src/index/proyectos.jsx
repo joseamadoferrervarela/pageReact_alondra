@@ -6,7 +6,7 @@ export function Proyectos() {
   return (
     <div className="proyectos">
       <Proyecto
-        name="proyecto 1 consumo api de youtube "
+        name="proyecto 1 api de youtube "
         descripcion='Esta es una aplicacion que consume la api, youtube data api v3, se consume la informacion y listas de reproduccion de la seccion principal de un canal de youtube, solo debes introducir la url de cualquier video relacionado al canal, y se mostrara la informacion y listas'
         linkgit="https://github.com/joseamadoferrervarela/youtubedataapiv3"
         linkhtml="#/apiyoutubedatav3"
@@ -33,7 +33,7 @@ export function Proyectos() {
 
 
        <Proyecto
-        name="proyecto 4 lista de eventos + grafico "
+        name="proyecto 4 dashboard"
         descripcion='Esta es una aplicacion donde se usan los datos de los eventos añadidos a una tabla, que te permite mediante graficos ver que tantos eventos se tienen por mes, se puede agregar, eliminar y modificar eventos'
         linkgit="https://github.com/joseamadoferrervarela/App-graficos"
         linkhtml="#/appgraficos"

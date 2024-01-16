@@ -5,17 +5,17 @@ import "./App.css";
 export function App1() {
   
   const [idchannel,setIdchannel] = useState("2S24-y0Ij3Y");
-  
-  
+  const ak="AIzaSyCpj2XUH7vjdQ_0h4RvtgVWyfvz0XBGSFA";
 
-  const handleIncrement= async () => {
-    const solicitudinfocanal0 =`https://youtube.googleapis.com/youtube/v3/videos?part=snippet,player&id=${idchannel}&key=AIzaSyAOmotyWBeEwp7-07ac-pRH-4gLyvJSUxM`
+
+    const handleIncrement= async () => {
+    const solicitudinfocanal0 =`https://youtube.googleapis.com/youtube/v3/videos?part=snippet,player&id=${idchannel}&key=${ak}`
     const respuesta0 = await fetch(solicitudinfocanal0)
     const respuesta0JSON = await respuesta0.json()
     const infocanal0 = respuesta0JSON.items
   
   
-    const solicitudinfocanal =`https://youtube.googleapis.com/youtube/v3/channels?part=snippet,brandingSettings&id=${infocanal0[0].snippet.channelId}&key=AIzaSyAOmotyWBeEwp7-07ac-pRH-4gLyvJSUxM`
+    const solicitudinfocanal =`https://youtube.googleapis.com/youtube/v3/channels?part=snippet,brandingSettings&id=${infocanal0[0].snippet.channelId}&key=${ak}`
     const respuesta1 = await fetch(solicitudinfocanal)
     const respuesta1JSON = await respuesta1.json()
     const infocanal = respuesta1JSON.items
@@ -23,11 +23,12 @@ export function App1() {
     const contains =document.getElementById('howl');
     contains.innerHTML='';
     
+    
     contains.innerHTML= contains.innerHTML + `<div class='maincaja'><div class='banner'><h2 class='mainmain'>youtube data api v3</h2></div><div class='naa'>${infocanal0[0].player.embedHtml}</div><div class='info'><h1 class='title'>${infocanal[0].snippet.title}</h1><a class='enlace' target="_blank" href="https://www.youtube.com/${infocanal[0].snippet.customUrl}">https://www.youtube.com/${infocanal[0].snippet.customUrl}</a><h2 class='description'>${infocanal[0].snippet.description}</h2></div></div>`;
     
     // <img class='myphoto' src="${infocanal0[0].snippet.thumbnails.high.url}"/>
     // infocanal[0].brandingSettings.image.bannerExternalUrl
-    const solicitudinfoseccionescanal= `https://youtube.googleapis.com/youtube/v3/channelSections?part=snippet,contentDetails&fields=items(snippet.title,contentDetails.playlists)&channelId=${infocanal0[0].snippet.channelId}&key=AIzaSyAOmotyWBeEwp7-07ac-pRH-4gLyvJSUxM`
+    const solicitudinfoseccionescanal= `https://youtube.googleapis.com/youtube/v3/channelSections?part=snippet,contentDetails&fields=items(snippet.title,contentDetails.playlists)&channelId=${infocanal0[0].snippet.channelId}&key=${ak}`
     
     
     const respuesta2 = await fetch(solicitudinfoseccionescanal);
@@ -50,7 +51,7 @@ export function App1() {
     console.log(listas)
 
       const respuesta=listas.map((list)=>{
-      const crearsolicitudidplaylist = `https://youtube.googleapis.com/youtube/v3/playlists?part=snippet,player&id=${list}&key=AIzaSyAOmotyWBeEwp7-07ac-pRH-4gLyvJSUxM`
+      const crearsolicitudidplaylist = `https://youtube.googleapis.com/youtube/v3/playlists?part=snippet,player&id=${list}&key=${ak}`
 
       return fetch(crearsolicitudidplaylist)
               .then(res=>res.json())
@@ -60,7 +61,7 @@ export function App1() {
       const respuestan=infoseccionesfiltrado1.map(list=>{
       const respuestann=list.contentDetails.playlists.map(list=>{
       
-      const crearsolicitudidplaylist4 = `https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&contentDetails&playlistId=${list}&maxResults=15&key=AIzaSyAOmotyWBeEwp7-07ac-pRH-4gLyvJSUxM`
+      const crearsolicitudidplaylist4 = `https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&contentDetails&playlistId=${list}&maxResults=15&key=${ak}`
       
       return fetch(crearsolicitudidplaylist4)
              .then(res=>res.json())
@@ -82,8 +83,17 @@ export function App1() {
           Promise.all(respuestan[ind]).then(valuesn => {
             
             // const listbox= value.items.map(element=> `<div class='videos'><h1 class='namelist'>${element.snippet.title}</h1><h2 class='descriptionlist'>${element.snippet.description}</h2>${element.player.embedHtml}</div>`)
-            const listbox= value.items.map(element=> `<div class='videos'><h1 class='namelist'>${element.snippet.title}</h1><h2 class='descriptionlist'>${element.snippet.description}</h2><img class='boo'src='${element.snippet.thumbnails.medium.url}'></div>`)
 
+            
+            // const listbox= value.items.map(element=> `<div class='videos'><h1 class='namelist'>${element.snippet.title}</h1><h2 class='descriptionlist'>${element.snippet.description}</h2><img class='boo'src='${element.snippet.thumbnails.medium.url}'></div>`)
+
+            const listbox= value.items.map(element=> `<div class='videos'><h1 class='namelist'>${element.snippet.title}</h1><h2 class='descriptionlist'>${element.snippet.description}</h2><a target="_blank" href="https://www.youtube.com/playlist?list=${element.id}">
+            <img class='boo' src="${element.snippet.thumbnails.medium.url}"></a>
+</div>`)
+
+
+            
+            
             const listboxs=listbox.toString()
             const lisboxss = listboxs.replace(/,/g,'')
           
@@ -109,10 +119,11 @@ export function App1() {
             
             d.items.map((elemen)=> {
              
-            cajad.innerHTML= cajad.innerHTML + `<div><h1>${elemen.snippet.title}</h1>
-            <h2>${elemen.snippet.description}</h2>
+            cajad.innerHTML= cajad.innerHTML + `<div><h1 class='tituloSS'>${elemen.snippet.title}</h1>
+            
             <a target="_blank" href="https://www.youtube.com/watch?v=${elemen.snippet.resourceId.videoId}">
             <img class=ni src="${elemen.snippet.thumbnails.medium.url}"></a>
+            <h2>${elemen.snippet.description}</h2>
             </div>`
             })
             console.log(cajad)

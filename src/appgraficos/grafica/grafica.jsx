@@ -1,14 +1,19 @@
-import {useState, useEffect} from 'react'
 import './grafica.css'
-import Plot from 'react-plotly.js';
-import Plotly from 'react-plotly.js';
-import {useSelector, useDispatch} from "react-redux";
+import {useSelector} from "react-redux";
+import {Bar} from "react-chartjs-2";
+import {Chart as ChartJS, BarController, BarElement, CategoryScale, LinearScale, plugins} from "chart.js";
+
+
+ChartJS.register(BarController ,BarElement, CategoryScale, LinearScale, plugins
+ )
 
 export function Grafica() {
   const data = useSelector((state)=>state.data)
- 
+  let nueva 
   const datas= data.map(data=>{
-      let nueva = data.fecha.substring(5,7)
+
+      nueva = data.fecha.substring(5,7)
+
       if(nueva[0]=='0'){
       nueva= nueva.substring(1,2)
       }
@@ -17,13 +22,11 @@ export function Grafica() {
 
       return nueva
     })
-
-  
-  var arr= []
-
-
-  for (var ind = 1; ind <= 12; ind++) {
-      let contador =0;
+    
+  const arreglo=[]
+  let contador
+  for (let ind = 1; ind <= 12; ind++) {
+      contador =0;
     
       datas.forEach(element=> {
     
@@ -33,28 +36,48 @@ export function Grafica() {
           
   });
 
-    arr[ind-1]=contador
+    arreglo[ind-1]=contador
   }
     
-    
-    const dat=[{x: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'],
-                  y: arr,
-                  type:'bar',
-                  mode:'lines+markers',
-                  marker: {color: 'rgb(142,124,195)'},
-                  
+    const options = {
+   
+      responsive:'true',
+      maintainAspectRatio:false,
+      plugins: {
+        legend: {
+          display:false,
+          position: 'top',
+        },
+        title: {
+          display: true,
+          text: 'Numero de eventos por mes '
+        }
+      }
+    };
 
-    }]
+   
+    const labels =['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
 
-    const lay={title:'numero de eventos por mes'}
+    const datos= {
+      labels: labels,
+      datasets: [
+        {
+          label: 'numero de eventos',
+          data: arreglo,
+          backgroundColor: 'rgb(204, 255, 255)',
+          
+        }
 
-    var config = {responsive: true}
-    
-    // Plotly.newPlot('#tester', dat, lay, config );
-    
+      ]
+
+    };
+   
+
   return (
-    <div style={{width:'100%', height:'50vh'}} id='tester'>
-      <Plot data={dat} layout={lay}   config={config} className='jiji'></Plot>
+    
+    <div style={{ padding: '20px',width:'100%', height:'40vh'}}>
+      <Bar type={'bar'} data={datos}  options={options}></Bar>
     </div>
+    
   )
 }
